@@ -11,7 +11,10 @@
 
 <br>
 
-3. gitignore 파일에 `secrets.json` 파일 추가 <br>
+3. gitignore 파일에 `secrets.json` 파일 추가 
+
+<br>
+
 4. settings.py 파일 수정 
 ```python
 import os, json
