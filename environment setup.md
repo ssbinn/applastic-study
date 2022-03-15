@@ -75,7 +75,6 @@ pipenv shell 이 아닌 다른 shell (예를 들어 새 터미널을 열면 나�
 디폴트로 쓰이는 gitignore를 찾을 수 있음 <br>
 복붙한 뒤 commit 
 
-<br>
 
 ### creat django project
 
@@ -115,10 +114,7 @@ vscode settings.json 파일에서 `"python.linting.flake8Args": ["--max-line-len
 
 ### 내 로컬 서버 외부 접속 허용하기
 [장고 공식 문서 참고](https://docs.djangoproject.com/en/2.1/ref/django-admin/#django-admin-runserver) <br>
-기본 IP 주소인 **`127.0.0.1`**은 다른 사람이 접속을 못해, localhost로 접속하는 거랑 똑같아 
-
-<br>
-
+기본 IP 주소인 `127.0.0.1`은 다른 사람이 접속을 못해, localhost로 접속하는 거랑 똑같아  <br>
 그래서 네트워크의 다른 시스템에서 개발 서버를 볼 수 있도록 하려면 자체 IP 주소(예: `192.168.2.1`) 또는 `0.0.0.0`( `::`IPv6이 활성화된 상태에서)를 사용해야 함
 
 <br>
