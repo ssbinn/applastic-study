@@ -75,6 +75,7 @@ pipenv shell 이 아닌 다른 shell (예를 들어 새 터미널을 열면 나�
 디폴트로 쓰이는 gitignore를 찾을 수 있음 <br>
 복붙한 뒤 commit 
 
+<br>
 
 ### creat django project
 
