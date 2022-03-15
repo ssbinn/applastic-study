@@ -113,3 +113,18 @@ Formatter는 코드를 더 보기좋게 수정해줌
 config/settings.py에 에러를 Linter가 잡아줌, 라인의 길이가 79자를 넘어서 에러라고 판단하는데 이건 예전 컴퓨터의 스크린이 작아서 설정해둔 숫자라서 Linter의 설정을 수정해줘야 함
 `ctrl+shift+p > Preferences: Open Settings (JSON) 클릭`
 vscode settings.json 파일에서 `"python.linting.flake8Args": ["--max-line-length==88"]` 코드 추가
+
+<br>
+
+### 내 로컬 서버 외부 접속 허용하기
+[장고 공식 문서 참고](https://docs.djangoproject.com/en/2.1/ref/django-admin/#django-admin-runserver)
+기본 IP 주소인 **`127.0.0.1`**은 다른 사람이 접속을 못해, localhost로 접속하는 거랑 똑같아
+
+<br>
+
+그래서 네트워크의 다른 시스템에서 개발 서버를 볼 수 있도록 하려면 자체 IP 주소(예: `192.168.2.1`) 또는 `0.0.0.0`( `::`IPv6이 활성화된 상태에서)를 사용해야 함
+
+<br>
+
+장고 settings.py 에서 `ALLOWED_HOST = [내 (사설)IP주소]` 코드 추가 후에
+`python manage.py runserver [내 ip 주소]:8000`
