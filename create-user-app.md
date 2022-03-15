@@ -11,7 +11,6 @@ db.sqlite3 파일 삭제 후 config/settings.py에서 `AUTH_USER_MODEL = "users.
 
 <br>
 
-#### user model
 makemigration까지 마치고 서버를 재가동시켰을 때 더이상 에러가 나오지 않지만, /admin 주소로 접속했을 때 user가 보이지 않음 <br>
 **User 모델을 user/admin.py와 연결**해서 해결해야 한다. <br>
 
