@@ -1,11 +1,17 @@
 1. secrets.json 파일 만들기 (README.md 파일과 같은 선상에 있도록)
+
+<br>
+
 2. 파일 내에 settings.py에 있는 SECRET_KEY 값 작성
 ```python
 {
   "SECRET_KEY": "[my secret_key]"
 }
 ```
-3. gitignore 파일에 `secrets.json` 파일 추가
+
+<br>
+
+3. gitignore 파일에 `secrets.json` 파일 추가 <br>
 4. settings.py 파일 수정 
 ```python
 import os, json
