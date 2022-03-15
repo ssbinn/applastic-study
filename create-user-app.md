@@ -6,7 +6,7 @@ username, 유효성 검사, 성, 이름, 이메일 필드들 등이 제공되는
 
 <br>
 
-장고에서 디폴트 user 모델을 덮어쓰려면, 내가 만든 user 애플리케이션을 config/settings.py 에서 설치해야 한다. [참고](https://docs.djangoproject.com/en/2.2/topics/auth/customizing/) <br>
+장고에서 디폴트 user 모델을 덮어쓰려면, 내가 만든 user 애플리케이션을 config/settings.py 에서 설치해야 한다.  [[참고](https://docs.djangoproject.com/en/2.2/topics/auth/customizing/)] <br>
 db.sqlite3 파일 삭제 후 config/settings.py에서 `AUTH_USER_MODEL = "users.User" 추가 > makemigration > 서버 재가동`
 
 <br>
