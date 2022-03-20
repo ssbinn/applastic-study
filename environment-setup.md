@@ -66,8 +66,8 @@ pipenv shell 이 아닌 다른 shell (예를 들어 새 터미널을 열면 나�
 `git init` <br>
 `git remote add origin [레파지토리 주소]` <br>
 `git add .` <br>
-`git commit -m "[커밋 메시지]"` 
-`git push origin main`  <br>
+`git commit -m "[커밋 메시지]"` <br>
+`git push origin main`
 
 <br>
 
