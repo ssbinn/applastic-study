@@ -2,7 +2,7 @@
 
 ### 장고 파일 살펴보기
 
-settings.py에서 `ME_ZONE = "UTC" > ME_ZONE = "Asia/Seoul" 변경` <br>
+settings.py에서 `TIME_ZONE = "UTC" > TIME_ZONE = "Asia/Seoul" 변경` <br>
 vscode 팁. intellisense라고 불림, 함수 코드에서 control 키를 누르고 있으면 해당 함수가 정의된 부분으로 갈 수 있음  
 
 <br>
