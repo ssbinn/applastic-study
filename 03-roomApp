@@ -1,0 +1,40 @@
+
+가장 먼저 해야할 일은 rooms 애플리케이션을 settings.py에 등록하는 일 
+그 다음은 모델을 구성하고, 그 모델과 admin을 연동하는 일 
+
+rooms가 만들어질 때나 업데이트 될 때를 알 수 있으면 좋을 것 같아 
+그래서 /rooms/models.py에 
+```python
+created = models.DateTimeField()
+updated = models.DateTimeField()
+```
+을 만들어줬어. 
+근데 이건 다른 애플리케이션(reviews, reservations 같은)에 똑같이 복사해줘야 해
+새 애플리케이션이 생길 때마다 복사-붙여넣기 하는 걸 방지하기 위해 core라는 새로운 애플리케이션을 만들어 줄 거야 
+
+shell 안으로 들어가서 `django-admin startapp core`
+생성된 core에 다른 애플리케이션에서 재사용 가능한 common 파일을 만들어 줄 거야
+user를 제외한 모든 애플리케이션의 Model 전부 core의 Model으로 부터 확장되도록 만들 거야 
+(user는 이미 로그인, 가입을 기록하는 기능이 있기 때문에)
+/core/models.py에서 작업을 마치고, core를 settings.py에 등록하는 것을 잊지말자 
+
+이 때 모델을 생성했으니 데이터베이스에 등록이 될 텐데, 
+core의 Model을 쓰는 다른 Model이 데이터베이스에 들어가길 원하고, core는 등록되지 않았으면 해
+
+Meta 클래스를 만들어주자, 기타사항을 적을 수 있어 
+여기에 abstract이라는 property를 넣어 줄 거야, 
+abstract model은 model이지만, 데이터베이스에는 나타나지 않는 model 
+`abstract = True`를 해줌으로써 데이터베이스에 이 model이 등록되지 않게 된다
+
+### room model
+
+국가 필드를 만드려고 하는데 choice에 모든 국가를 복붙하지 말고, Django countries 라이브러리를 사용하자  [ [참고](https://github.com/SmileyChris/django-countries) ]
+
+`pipenv install django-countries`
+`config/settings.py > THIRD_PARTY_APPS = ["django-countries"] 추가`
+
++) import 관련 좋은 코딩 팁
+- 먼저 python 관련된 걸 import
+- django랑 관련된 걸 import
+- 외부 패키지를 import
+- 내가 만든 패키지를 import 
