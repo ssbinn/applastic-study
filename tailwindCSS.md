@@ -16,7 +16,7 @@
     - scss 파일을 변경했을 때, apply를 사용할 때는 항상 `npm run css` 으로 변경 결과 확인
     - HTML 파일로 css 작업을 할 땐 매번 `npm run css` 할 필요 없음
 - 자동으로 `static/css/styles.css` 생성됨
-    - `gulp-sass` 오류
+    - `gulp-sass` 오류 <br>
     
     ```bash
     Error in plugin "gulp-sass"
@@ -35,7 +35,11 @@
     
     - 해결
         - `npm i --save-dev sass`
-        - gulpfile.js 파일 내에서 `const sass = require("gulp-sass");` > `const sass = require("gulp-sass")(require("sass"));` 코드 변경
+        - gulpfile.js 파일 내에서 
+            ```python
+            # const sass = require("gulp-sass");
+            const sass = require("gulp-sass")(require("sass"));
+            ```
 - static 폴더가 expose 될 수 있도록 [settings.py](http://settings.py) 에서
     
     ```python
@@ -44,12 +48,12 @@
     STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
     ```
     
-- base.html 에
+- base.html
 
-```python
-{% load static %}
-...
-<head>
-...
-<link rel="stylesheet" href="{% static 'css/styles.css' %}"> 추가
-```
+    ```python
+    {% load static %}
+    ...
+    <head>
+    ...
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 추가
+    ```
