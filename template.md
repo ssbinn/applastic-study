@@ -20,7 +20,6 @@ HTTP Response를 반환하지 않아서 오류가 난 경우  > render로 해결
 - urls.py
     - path는 오로지 url과 함수만 갖는다, class 오면 안됨
     
-![template_name](https://user-images.githubusercontent.com/83692497/162881260-f289045c-8623-4607-b0cf-06acfd27a121.png)
-![func_name](https://user-images.githubusercontent.com/83692497/162881286-b10f259a-32c3-45fe-b50f-f0ed233c9095.png)
+<img height="70%" width="70%" src="https://user-images.githubusercontent.com/83692497/162881260-f289045c-8623-4607-b0cf-06acfd27a121.png"/>
 <img height="70%" width="70%" src="https://user-images.githubusercontent.com/83692497/162881286-b10f259a-32c3-45fe-b50f-f0ed233c9095.png"/>
 
