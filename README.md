@@ -4,3 +4,4 @@
 ## 참고 
 - elastic 가이드 북: https://esbook.kimjmin.net/
 - elastic 공식 문서: https://www.elastic.co/guide/index.html
+- 처음부터 시작하는 elastic : https://www.youtube.com/watch?v=Ks0P49B4OsA&list=PLhFRZgJc2afp0gaUnQf68kJHPXLG16YCf
