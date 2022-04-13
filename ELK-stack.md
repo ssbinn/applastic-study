@@ -25,6 +25,7 @@ sudo yum install y wget
 ```
 
 --- 
+
 ### 엘라스틱 설치
 - 다운로드 ( 압축 푸는 명령어: tar -xzf )
 ```
@@ -79,7 +80,7 @@ kill -9 [pid]
 ```
 
 ---
-### FileBeat 데이터 분석
+### FileBeat 
 
 #### FileBeat 설치
 - 다운로드 ( 압축 푸는 명령어: tar -xzf )
@@ -87,87 +88,14 @@ kill -9 [pid]
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.17.0-linux-x86_64.tar.gz
 ```
 
-- filebeat.yml
-```
-filebeat.inputs:
-- type: filestream
-  enabled: true
-  paths:
-    - [.csv 파일 경로 (pwd 명령어로 확인) ]
-
-setup.ilm.enabled: false
-setup.template.enabled: false
-output.elasticsearch.index: [index명]
-
-processors:
-  - decode_csv_fields:
-      fields:
-        message: temp
-      separator: ","
-      ignore_missing: false
-      overwrite_keys: true
-      trim_leading_space: true
-      fail_on_error: true
-  - extract_array:
-      field: temp
-      mappings:
-        통계청행정동코드: 0
-        행자부행정동코드: 1
-        시도명: 2
-        시군구명: 3
-        행정동명: 4
-        
-output.elasticsearch:
-  hosts: ["http://localhost:9200"]
-  username: "[id]"
-  password: "[password]"
-```
-
-- 엘라스틱에 데이터를 넣기 전 테스트 코드 
-```
-./filebeat test config
-./filebeat test output
-```
-
 - filebeat 구동 (엘라스틱에 데이터 넣기)
 ```
 ./filebeat -e
 ```
 
-- 엘라스틱서치 [Stack Management] - [Index Management]
-data가 잘 들어갔는 지, output.elasticsearch.index 에서 설정한 index 가 잘 들어왔는 지, health가 yellow인지 확인
-
-<br>
-(그 뒤 과정은 책, vscode 참고)
-<br>
-
-- filebeat 재구동
-```shell
-# filebeat 폴더 경로에서
-cd data/registry/filebeat
-
-rm log.json
-
-cd ~/[filebeat 폴더 경로]
-
-./filebeat -e 
-```
-
-<br>
-
 --- 
-### enrich
-#### ingest pipeline 만들기
 
-enrich : https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest-enriching-data.html
-plugins-filter: https://www.elastic.co/guide/en/logstash/current/plugins-filters-elasticsearch.html
-
-- ingest pipeline 검증 - [dev Tools]
-```
-POST _ingest/pipeline/_simulate
-```
-
-### Logstash 데이터 분석
+### Logstash 
 
 #### Logstash 설치
 - 다운로드 ( 압축 푸는 명령어: tar -xzf )
